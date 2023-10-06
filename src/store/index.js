@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import walletReducer from "../features/wallet/walletSlice";
+import userReducer from "../features/user/userSlice";
 const store = configureStore({
   reducer: {
-    wallet: walletReducer,
+    user: userReducer,
+    // wallet: walletReducer,
   },
 });
 export default store;
