@@ -4,7 +4,7 @@ import userReducer from "../features/user/userSlice";
 const store = configureStore({
   reducer: {
     user: userReducer,
-    // wallet: walletReducer,
+    wallet: walletReducer,
   },
 });
 export default store;

@@ -70,10 +70,7 @@ const userSlice = createSlice({
       const userEmail = current(state.users).find(
         (user) => user.email === action.payload
       );
-      //   console.log(
-      //     "🚀 ~ file: userSlice.js:71 ~  state.users:",
-      //     current(state.users)
-      //   );
+
       if (userEmail) {
         state.userConnected = userEmail;
       }
@@ -91,12 +88,37 @@ const userSlice = createSlice({
       }
     },
     // - modifier les informations de l'utilisateur connecté
-    // updateUserConnected: (state, action) => {},
+    updateUser: (state, action) => {
+      const { id, lastname, firstname, email, role } = action.payload;
+      const userToUpdate = state.users.find((user) => user.id === id);
+
+      if (userToUpdate) {
+        userToUpdate.lastname = lastname;
+        userToUpdate.firstname = firstname;
+        userToUpdate.email = email;
+        userToUpdate.role = role;
+      }
+    },
+
     // - promouvoir l'utilisateur (en admin ou en gestionnaire)
-    // updateRoleUserConnected: (state, action) => {},
+    updateRoleUserConnected: (state, action) => {
+      const newRole = action.payload;
+      const userConnected = state.userConnected;
+
+      if (userConnected) {
+        userConnected.role = newRole;
+      }
+    },
   },
 });
 
-export const { addUser, connectUser, disconnectUser, updateViewedPages } =
-  userSlice.actions;
+export const {
+  addUser,
+  deleteUser,
+  connectUser,
+  disconnectUser,
+  updateViewedPages,
+  updateUser,
+  updateRoleUserConnected,
+} = userSlice.actions;
 export default userSlice.reducer;

@@ -8,10 +8,11 @@ import {
   // createHashRouter,
   RouterProvider,
 } from "react-router-dom";
-import Count from "./components/Count";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signin from "./pages/Signin";
+import Users from "./pages/Users";
+import CountPage from "./pages/Count";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +28,12 @@ const router = createBrowserRouter([
     element: <Signin />,
   },
   {
+    path: "/users",
+    element: <Users />,
+  },
+  {
     path: "/count",
-    element: <Count />,
+    element: <CountPage />,
   },
 ]);
 

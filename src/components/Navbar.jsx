@@ -14,13 +14,19 @@ const Navbar = () => {
     <nav className="navbar">
       <ul>
         <li>
-          <Link onClick={() => navigateAndCountPages("/")}>Accueil</Link>
+          <Link onClick={() => navigateAndCountPages("/")}>Home</Link>
         </li>
         <li>
           <Link onClick={() => navigateAndCountPages("/signin")}>Sign In</Link>
         </li>
         <li>
           <Link onClick={() => navigateAndCountPages("/login")}>Login</Link>
+        </li>
+        <li>
+          <Link onClick={() => navigateAndCountPages("/users")}>Users</Link>
+        </li>
+        <li>
+          <Link onClick={() => navigateAndCountPages("/count")}>Count</Link>
         </li>
       </ul>
     </nav>
