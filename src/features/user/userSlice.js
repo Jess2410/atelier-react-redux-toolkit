@@ -91,9 +91,9 @@ const userSlice = createSlice({
       }
     },
     // - modifier les informations de l'utilisateur connecté
-    updateUserConnected: (state, action) => {},
+    // updateUserConnected: (state, action) => {},
     // - promouvoir l'utilisateur (en admin ou en gestionnaire)
-    updateRoleUserConnected: (state, action) => {},
+    // updateRoleUserConnected: (state, action) => {},
   },
 });
 
